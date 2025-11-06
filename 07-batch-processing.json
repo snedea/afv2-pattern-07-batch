@@ -184,7 +184,7 @@
         },
         "outputAnchors": [
           {
-            "id": "agent_planner-output-agentAgentflow-Agent|AgentExecutor",
+            "id": "agent_planner-output-agentAgentflow",
             "name": "agentAgentflow",
             "label": "Agent",
             "description": "Agent",
@@ -393,7 +393,7 @@
         },
         "outputAnchors": [
           {
-            "id": "agent_processor-output-agentAgentflow-Agent|AgentExecutor",
+            "id": "agent_processor-output-agentAgentflow",
             "name": "agentAgentflow",
             "label": "Agent",
             "description": "Agent",
@@ -548,7 +548,7 @@
         },
         "outputAnchors": [
           {
-            "id": "agent_aggregator-output-agentAgentflow-Agent|AgentExecutor",
+            "id": "agent_aggregator-output-agentAgentflow",
             "name": "agentAgentflow",
             "label": "Agent",
             "description": "Agent",
@@ -619,41 +619,41 @@
       "source": "startAgentflow_0",
       "sourceHandle": "startAgentflow_0-output-startAgentflow",
       "target": "agent_planner",
-      "targetHandle": "agent_planner-input-agentAgentflow-Agent|AgentExecutor",
+      "targetHandle": "agent_planner-input-agentAgentflow",
       "type": "buttonedge",
-      "id": "startAgentflow_0-startAgentflow_0-output-startAgentflow-agent_planner-agent_planner-input-agentAgentflow-Agent|AgentExecutor"
+      "id": "startAgentflow_0-startAgentflow_0-output-startAgentflow-agent_planner-agent_planner-input-agentAgentflow"
     },
     {
       "source": "agent_planner",
-      "sourceHandle": "agent_planner-output-agentAgentflow-Agent|AgentExecutor",
+      "sourceHandle": "agent_planner-output-agentAgentflow",
       "target": "iterationAgentflow_0",
       "targetHandle": "iterationAgentflow_0-input-iterationAgentflow",
       "type": "buttonedge",
-      "id": "agent_planner-agent_planner-output-agentAgentflow-Agent|AgentExecutor-iterationAgentflow_0-iterationAgentflow_0-input-iterationAgentflow"
+      "id": "agent_planner-agent_planner-output-agentAgentflow-iterationAgentflow_0-iterationAgentflow_0-input-iterationAgentflow"
     },
     {
       "source": "iterationAgentflow_0",
       "sourceHandle": "iterationAgentflow_0-output-iterationAgentflow",
       "target": "agent_processor",
-      "targetHandle": "agent_processor-input-agentAgentflow-Agent|AgentExecutor",
+      "targetHandle": "agent_processor-input-agentAgentflow",
       "type": "buttonedge",
-      "id": "iterationAgentflow_0-iterationAgentflow_0-output-iterationAgentflow-agent_processor-agent_processor-input-agentAgentflow-Agent|AgentExecutor"
+      "id": "iterationAgentflow_0-iterationAgentflow_0-output-iterationAgentflow-agent_processor-agent_processor-input-agentAgentflow"
     },
     {
       "source": "agent_processor",
-      "sourceHandle": "agent_processor-output-agentAgentflow-Agent|AgentExecutor",
+      "sourceHandle": "agent_processor-output-agentAgentflow",
       "target": "agent_aggregator",
-      "targetHandle": "agent_aggregator-input-agentAgentflow-Agent|AgentExecutor",
+      "targetHandle": "agent_aggregator-input-agentAgentflow",
       "type": "buttonedge",
-      "id": "agent_processor-agent_processor-output-agentAgentflow-Agent|AgentExecutor-agent_aggregator-agent_aggregator-input-agentAgentflow-Agent|AgentExecutor"
+      "id": "agent_processor-agent_processor-output-agentAgentflow-agent_aggregator-agent_aggregator-input-agentAgentflow"
     },
     {
       "source": "agent_aggregator",
-      "sourceHandle": "agent_aggregator-output-agentAgentflow-Agent|AgentExecutor",
+      "sourceHandle": "agent_aggregator-output-agentAgentflow",
       "target": "directReplyAgentflow_0",
       "targetHandle": "directReplyAgentflow_0-input-directReplyAgentflow",
       "type": "buttonedge",
-      "id": "agent_aggregator-agent_aggregator-output-agentAgentflow-Agent|AgentExecutor-directReplyAgentflow_0-directReplyAgentflow_0-input-directReplyAgentflow"
+      "id": "agent_aggregator-agent_aggregator-output-agentAgentflow-directReplyAgentflow_0-directReplyAgentflow_0-input-directReplyAgentflow"
     }
   ]
 }
