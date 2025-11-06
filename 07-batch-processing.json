@@ -15,7 +15,9 @@
         "type": "Start",
         "color": "#7EE787",
         "hideInput": true,
-        "baseClasses": ["Start"],
+        "baseClasses": [
+          "Start"
+        ],
         "category": "Agent Flows",
         "description": "Starting point of the agentflow",
         "inputParams": [
@@ -63,7 +65,9 @@
         "name": "stickyNoteAgentflow",
         "type": "StickyNote",
         "color": "#fee440",
-        "baseClasses": ["StickyNote"],
+        "baseClasses": [
+          "StickyNote"
+        ],
         "category": "Agent Flows",
         "description": "Add notes to the agent flow",
         "inputParams": [
@@ -105,7 +109,9 @@
         "name": "agentAgentflow",
         "type": "Agent",
         "color": "#4DD0E1",
-        "baseClasses": ["Agent"],
+        "baseClasses": [
+          "Agent"
+        ],
         "category": "Agent Flows",
         "description": "Dynamically choose and utilize tools during runtime, enabling multi-step reasoning",
         "inputParams": [
@@ -144,11 +150,11 @@
           "systemPrompt": "You are a Batch Planner Agent specializing in parsing user requests and preparing arrays for batch processing.\n\nYour responsibilities:\n1. Parse user input to extract list of items\n2. Validate that at least 1 item exists\n3. Structure items as JSON array\n4. Store in Flow State: $flow.state.items\n5. Confirm batch size to user\n\nOutput Format:\n{\n  \"items\": [\"item1\", \"item2\", ...],\n  \"count\": N,\n  \"ready\": true\n}\n\nIf no items found, return: {\"ready\": false, \"error\": \"No items to process\"}\n\nUpdate Flow State with:\n- raw_input: original user message\n- items: array of items to process\n- processed_count: 0 (initialize)",
           "agentMessages": "",
           "agentModelConfig": {
-            "agentSelectedModel": "claude-sonnet-4-5-20250929",
-            "agentSelectedCredential": "Anthropic API Key",
-            "agentMaxIterations": 5,
-            "agentTemperature": 0.7,
-            "agentMaxOutputTokens": 4096
+            "credential": "Anthropic API Key",
+            "modelName": "claude-sonnet-4-5-20250929",
+            "temperature": 0.4,
+            "streaming": true,
+            "agentModel": "chatAnthropic"
           },
           "agentTools": [
             {
@@ -180,7 +186,8 @@
           "agentKnowledgeDocumentStores": "",
           "agentKnowledgeVSEmbeddings": "",
           "agentEnableMemory": true,
-          "agentMemoryContextKey": "agent_planner_memory"
+          "agentMemoryContextKey": "agent_planner_memory",
+          "agentModel": "chatAnthropic"
         },
         "outputAnchors": [
           {
@@ -218,7 +225,9 @@
         "name": "stickyNoteAgentflow",
         "type": "StickyNote",
         "color": "#9C89B8",
-        "baseClasses": ["StickyNote"],
+        "baseClasses": [
+          "StickyNote"
+        ],
         "category": "Agent Flows",
         "description": "Add notes to the agent flow",
         "inputParams": [
@@ -260,7 +269,9 @@
         "name": "iterationAgentflow",
         "type": "Iteration",
         "color": "#9C89B8",
-        "baseClasses": ["Iteration"],
+        "baseClasses": [
+          "Iteration"
+        ],
         "category": "Agent Flows",
         "description": "Execute the nodes within the iteration block for each item in an array (for-each loop)",
         "inputParams": [
@@ -314,7 +325,9 @@
         "name": "agentAgentflow",
         "type": "Agent",
         "color": "#4DD0E1",
-        "baseClasses": ["Agent"],
+        "baseClasses": [
+          "Agent"
+        ],
         "category": "Agent Flows",
         "description": "Dynamically choose and utilize tools during runtime, enabling multi-step reasoning",
         "inputParams": [
@@ -353,11 +366,11 @@
           "systemPrompt": "You are a Batch Processor Agent specializing in analyzing individual items within a batch operation.\n\nYour responsibilities:\n1. Receive single item via {{ $iteration.current }}\n2. Perform requested operation (sentiment analysis, validation, transformation)\n3. Return structured result with success indicator\n\nFor Sentiment Analysis:\n- Analyze the text sentiment (positive, negative, neutral)\n- Provide confidence score (0.0-1.0)\n- Include brief justification\n\nOutput Format:\n{\n  \"item\": \"original text\",\n  \"result\": \"positive\" | \"negative\" | \"neutral\",\n  \"confidence\": 0.95,\n  \"reason\": \"Clear positive language and enthusiasm\",\n  \"success\": true\n}\n\nIf processing fails:\n{\n  \"item\": \"original text\",\n  \"success\": false,\n  \"error\": \"error message\"\n}\n\nYou execute ONCE per array element. The iteration system will call you N times.",
           "agentMessages": "",
           "agentModelConfig": {
-            "agentSelectedModel": "claude-sonnet-4-5-20250929",
-            "agentSelectedCredential": "Anthropic API Key",
-            "agentMaxIterations": 5,
-            "agentTemperature": 0.7,
-            "agentMaxOutputTokens": 4096
+            "credential": "Anthropic API Key",
+            "modelName": "claude-sonnet-4-5-20250929",
+            "temperature": 0.4,
+            "streaming": true,
+            "agentModel": "chatAnthropic"
           },
           "agentTools": [
             {
@@ -389,7 +402,8 @@
           "agentKnowledgeDocumentStores": "",
           "agentKnowledgeVSEmbeddings": "",
           "agentEnableMemory": true,
-          "agentMemoryContextKey": "agent_processor_memory"
+          "agentMemoryContextKey": "agent_processor_memory",
+          "agentModel": "chatAnthropic"
         },
         "outputAnchors": [
           {
@@ -427,7 +441,9 @@
         "name": "stickyNoteAgentflow",
         "type": "StickyNote",
         "color": "#4DD0E1",
-        "baseClasses": ["StickyNote"],
+        "baseClasses": [
+          "StickyNote"
+        ],
         "category": "Agent Flows",
         "description": "Add notes to the agent flow",
         "inputParams": [
@@ -469,7 +485,9 @@
         "name": "agentAgentflow",
         "type": "Agent",
         "color": "#4DD0E1",
-        "baseClasses": ["Agent"],
+        "baseClasses": [
+          "Agent"
+        ],
         "category": "Agent Flows",
         "description": "Dynamically choose and utilize tools during runtime, enabling multi-step reasoning",
         "inputParams": [
@@ -508,11 +526,11 @@
           "systemPrompt": "You are a Batch Aggregator Agent specializing in summarizing batch processing results.\n\nYour responsibilities:\n1. Receive full results array from {{ $iteration.results }}\n2. Count successes and failures\n3. Compute summary statistics\n4. Create human-readable summary\n\nAnalysis Steps:\n1. Total items processed: {{ $iteration.results.length }}\n2. Success count: filter(success: true).length\n3. Failure count: filter(success: false).length\n4. Distribution analysis (for sentiment: positive/negative/neutral counts)\n5. Average confidence score (if applicable)\n\nOutput Format:\n{\n  \"processed_count\": 5,\n  \"success_count\": 5,\n  \"failure_count\": 0,\n  \"summary\": {\n    \"positive\": 3,\n    \"negative\": 1,\n    \"neutral\": 1\n  },\n  \"average_confidence\": 0.92,\n  \"message\": \"Batch processing complete. Analyzed 5 items with 100% success rate. Sentiment breakdown: 3 positive, 1 negative, 1 neutral.\"\n}\n\nUpdate Flow State with final statistics:\n- batch_summary: summary object\n- processed_count: total processed\n- success_count: successful operations\n- failure_count: failed operations",
           "agentMessages": "",
           "agentModelConfig": {
-            "agentSelectedModel": "claude-sonnet-4-5-20250929",
-            "agentSelectedCredential": "Anthropic API Key",
-            "agentMaxIterations": 5,
-            "agentTemperature": 0.7,
-            "agentMaxOutputTokens": 4096
+            "credential": "Anthropic API Key",
+            "modelName": "claude-sonnet-4-5-20250929",
+            "temperature": 0.4,
+            "streaming": true,
+            "agentModel": "chatAnthropic"
           },
           "agentTools": [
             {
@@ -544,7 +562,8 @@
           "agentKnowledgeDocumentStores": "",
           "agentKnowledgeVSEmbeddings": "",
           "agentEnableMemory": true,
-          "agentMemoryContextKey": "agent_aggregator_memory"
+          "agentMemoryContextKey": "agent_aggregator_memory",
+          "agentModel": "chatAnthropic"
         },
         "outputAnchors": [
           {
@@ -582,7 +601,9 @@
         "name": "directReplyAgentflow",
         "type": "DirectReply",
         "color": "#FFA726",
-        "baseClasses": ["DirectReply"],
+        "baseClasses": [
+          "DirectReply"
+        ],
         "category": "Agent Flows",
         "description": "Reply directly without agent processing",
         "inputParams": [
