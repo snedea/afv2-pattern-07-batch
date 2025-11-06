@@ -1,0 +1,9 @@
+node_modules/
+.env
+.env.local
+.DS_Store
+.context-foundry/
+test-results/
+playwright-report/
+coverage/
+*.log
